@@ -15,15 +15,15 @@
         
 
 ### 使用
-    #### 简单使用    
+    ### 简单使用    
     
         * 使用 git 克隆代码到Linux    
         
         * 替换tuling和google的key为自己的key    
         
-        * `$ python ./app/webserver.py`    
+        * $ python ./app/webserver.py    
         
-    #### 复杂使用(flask+uWSGI+upStar+nginx)    
+    ### 复杂使用(flask+uWSGI+upStar+nginx)    
     
         * 参考[digitalocean](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04 "digitalocean")的教程    
         
@@ -31,20 +31,31 @@
         
             1. uWSGI Configuration File    
             
-            file_name: robotapp.ini    
+            file_name: robotapp.ini(注意替换路径中的用户名为自己的用户名)    
             
                 [uwsgi]    
                 module = wsgi    
                 master = true    
                 processes = 2    
                 socket = robotapp.sock    
-                chdir = /home/kejing_usr/robotapp/app/    
+                chdir = /home/user_name/robotapp/app/    
                 wsgi-file = app/wsgi.py    
-                daemonize = /home/kejing_usr/robotapp/app/log/server.log    
+                daemonize = /home/user_name/robotapp/app/log/server.log    
                 threads = 2    
                 chmod-socket = 660    
                 vacuum = true    
                 die-on-term = true*    
                 
 
-            2. 
+            2. nginx config file
+                
+                $ vim cat /etc/nginx/sites-available/robotapp    
+                    server{    
+                        listen 8080;    
+                        server_name 13.67.59.242;    
+                        location / {    
+                            include uwsgi_params;    
+                            uwsgi_pass unix:/home/user_name/robotapp/app/robotapp.sock;    
+                        }    
+                    }    
+                
