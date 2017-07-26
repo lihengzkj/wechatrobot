@@ -4,14 +4,15 @@
     其中机器人的功能包括：自动应答各个领域的问题的功能和聊天功能：，这个功能基于[tuling](http://www.tuling123.com/ "tuling")机器人；翻译功能，提供中文翻译成英文和英文翻译成中文；图片解析功能：解析图片的内容和分析图片中的物体。翻译和分析功能是基于[Google的云端机器学习的API](https://console.cloud.google.com "Google API").这里需要注意，如果使用者需要使用这两个tuling和Google API 需要自行注册获取key.
     
 ### 运行环境要求
-    系统要求： `Linux` `python3`
-    软件要求：
-        `pip3 install --upgrade google-api-python-client`
-        `pip3 install --upgrade urllib3 requests`
-        `pip3 install  -U gTTS`
-        `sudo apt-get install libav-tools -y`
-        `sudo apt-get install xdg-utils`
-        `sudo apt-get install desktop-file-utils`
+    系统要求： `Linux` `python3`  
+    软件要求：   
+    `pip3 install --upgrade google-api-python-client`   
+        `pip3 install --upgrade urllib3 requests`   
+        `pip3 install  -U gTTS`   
+        `sudo apt-get install libav-tools -y`   
+        `sudo apt-get install xdg-utils`   
+        `sudo apt-get install desktop-file-utils`   
+        
 
 ### 使用
     #### 简单使用
