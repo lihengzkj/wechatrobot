@@ -50,12 +50,13 @@
                 $ vim cat /etc/nginx/sites-available/robotapp    
                     server{    
                         listen your_port(e.g.80);    
-                        server_name your_server_ip/domain;    
+                        server_name your_server_ip/domain;    
                         location / {    
                             include uwsgi_params;    
-                            uwsgi_pass unix:/home/user_name/robotapp/app/robotapp.sock;     
+                            uwsgi_pass unix:/home/user_name/robotapp/app/robotapp.sock;     
+                            }    
                         }    
-                    }    
+                    
                 
 ### trouble shooting
      1. Issu: FileNotFoundError: [Errno 2] No such file or directory: 'xdg-open'
