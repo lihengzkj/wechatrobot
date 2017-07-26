@@ -61,7 +61,9 @@
 ### trouble shooting
      1. Issu: FileNotFoundError: [Errno 2] No such file or directory: 'xdg-open'
      Solution: install xdg-utils   xdg-utils    
+     
          $ sudo apt-get install xdg-utils
+         
      2. Error: no "view" mailcap rules found for type "image/png"
      WARNING: You don't seem to have any mimeinfo.cache files.
      Try running the update-desktop-database command. If you
