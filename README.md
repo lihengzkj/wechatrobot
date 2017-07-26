@@ -61,7 +61,7 @@
      1. Issu: FileNotFoundError: [Errno 2] No such file or directory: 'xdg-open'
      Solution: install xdg-utils   xdg-utils  
 
-     `$ sudo apt-get install xdg-utils`
+         $ sudo apt-get install xdg-utils
 
      2. Error: no "view" mailcap rules found for type "image/png"
      WARNING: You don't seem to have any mimeinfo.cache files.
@@ -69,49 +69,49 @@
      don't have this command you should install the
      desktop-file-utils package.
 
-     `$ sudo apt-get install desktop-file-utils`
+         $ sudo apt-get install desktop-file-utils
 
      3. Error: no "view" mailcap rules found for type "image/png"
 
-     `itchat.auto_login(enableCmdQR=2)`
+         itchat.auto_login(enableCmdQR=2)
 
      4. File "/usr/lib/python3/dist-packages/urllib3/util.py", line 144, in _validate_timeout
 
      This error happens because of an incompatibility between your urllib3 and requests version. You can solve the problem by updating urllib3 and requests:
-     `pip install --upgrade urllib3 requests`
+         pip install --upgrade urllib3 requests
 
      5. Install google api client:
 
-     `$ sudo pip3 install --upgrade google-api-python-client`
+         $ sudo pip3 install --upgrade google-api-python-client
 
      6. Install some necessary tool:
 
-     `$ pip install  -U gTTS`
-     `$ apt-get install libav-tools -y`
+         $ pip install  -U gTTS
+         $ apt-get install libav-tools -y
 
      7. file_cache is unavailable when using oauth2client >= 4.0.0
-      `$ pip3 list | grep 'oauth2client' `
-      `$ pip3 uninstall oauth2client==4.1.2`
-      `$ pip3 install oauth2client==1.5.2`
+         $ pip3 list | grep 'oauth2client' 
+         $ pip3 uninstall oauth2client==4.1.2
+         $ pip3 install oauth2client==1.5.2
      speech_service = build('speech', 'v1', developerKey=apikey,cache_discovery=False)
 
      8. UnicodeEncodeError: 'ascii' codec can't encode characters in position 62-71: ordinal not in range(128)
      Refer to: http://www.php.cn/python-tutorials-358717.html
 
-      1. 查看所有服务器所有本地编码：$ locale
-      发现LANGUAGE并没有设置
-      2. 在文件uWSGI的启动文件中加入该参数的设置
-      `$ vim /etc/init/robotapp.conf`
+         1. 查看所有服务器所有本地编码：$ locale
+            发现LANGUAGE并没有设置
+         2. 在文件uWSGI的启动文件中加入该参数的设置
+              $ vim /etc/init/robotapp.conf
 
-           description "uWSGI server instance configured to serve robotapp"
-           start on runlevel [2345]
-           stop on runlevel [!2345]
+                   description "uWSGI server instance configured to serve robotapp"
+                   start on runlevel [2345]
+                   stop on runlevel [!2345]
 
-           setuid kejing_usr
-           setgid www-data
+                   setuid kejing_usr
+                   setgid www-data
 
-           env LANG="en_US.UTF-8"
-           env LANGUAGE="en_US.UTF-8"
-           env PATH=/home/kejing_usr/robotapp/robotenv/bin
-           chdir /home/kejing_usr/robotapp/app
-           exec uwsgi --ini robotapp.ini
+                   env LANG="en_US.UTF-8"
+                   env LANGUAGE="en_US.UTF-8"
+                   env PATH=/home/kejing_usr/robotapp/robotenv/bin
+                   chdir /home/kejing_usr/robotapp/app
+                   exec uwsgi --ini robotapp.ini
