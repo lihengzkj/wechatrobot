@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="robot home page">
+    <meta name="author" content="kejing">
+
+    <title>Robot Users</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/static/js/ie-emulation-modes-warning.js.download"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Robot Users</h3>
+        </div>
+
+        <div class="jumbotron">
+            <div class="row">
+                <form action="/adduser" method="POST" class="form-inline ">
+                    <div class="form-group ">
+                        <label class="sr-only " for=""username_id ">User Name</label>
+                        <input type="text"  name="username"  class="form-control " id=""username_id " placeholder="User Name ">
+                    </div>
+                    <div class="form-group ">
+                        <label class="sr-only " for="pwd_id ">Password</label>
+                        <input type="password" name="pwd" class="form-control " id="pwd_id " placeholder="Password ">
+                    </div>
+
+                    <button type="submit" style="font-size: 12px;    padding: 8px 20px;" class="btn btn-default ">添加</button>
+                </form>
+            </div>
+            <hr />
+            <div class="row ">
+                <table class="table table-hover ">
+                    <thead>
+                        <tr>
+                            <td>用户编号</td>
+                            <td>用户名</td>
+                            <td>机器人状态</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	{% for user in userlist %}
+                    	<tr>
+	                        <td>{{user[0]}}</td>
+	                        <td>{{user[1]}}</td>
+	                        <td>{{user[2]}}</td>
+	                        <td>
+	                        {% if user[1]!='kejing' %}
+	                        <a href="/deleteuser?user_id={{user[0]}}" onclick="if(confirm('确定删除吗?')==false)return false">删除</a>
+	                        {% endif %}
+	                        </td>
+                    	</tr>
+                    	{% endfor %}
+                	</tbody>
+            	</table>
+            </div> 
+        </div>
+
+
+        <footer class="footer ">
+            <p>@ 2017 Company, Inc.</p>
+        </footer>
+
+    </div>
+    <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport-bug-workaround.js.download "></script>
+
+
+</body>
+
+</html>
