@@ -19,7 +19,7 @@
     
         * 使用 git 克隆代码到Linux    
         * 替换tuling和google的key为自己的key    
-        * $ python ./app/webserver.py    
+        * $ python3 ./app/webserver.py    
         
    #### 复杂使用(flask+uWSGI+upStar+nginx)    
     
