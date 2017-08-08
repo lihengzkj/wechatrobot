@@ -20,7 +20,8 @@
         * 使用 git 克隆代码到Linux    
         * 替换tuling和google的key为自己的key    
         * $ python3 ./app/webserver.py    
-        
+        *  访问的地址是http://youid:8080
+        
    #### 复杂使用(flask+uWSGI+upStar+nginx)    
     
         * 参考[digitalocean](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04 "digitalocean")的教程    
